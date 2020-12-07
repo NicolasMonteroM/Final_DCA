@@ -5,10 +5,10 @@ import processing.core.PFont;
 
 public class Main  extends PApplet{
 	
-	public PFont font; // Consolas Font
 
-	
+	PFont font;
 	private Register register;
+	private String screen;
 
 	public static void main(String[] args) {
 		PApplet.main(Main.class.getName());
@@ -21,12 +21,36 @@ public class Main  extends PApplet{
 	
 	
 	public void setup() {
+		screen = "register";
+		font = createFont("Anonymous Pro Bold",12);
 		register= new Register(this);
-		font = loadFont("Consolas-12.vlw");
+		register.drawTextfield(); // Don't move from setup
+		
+	
+
 	}
 	
 	public void draw() {
+		background(0);
+		textFont(font);
+
+		//Screens
+		
+		switch(screen) {
+		
+		  case "register":
 		register.drawScreen();
+		fill(240);
+		text("LEADERBOARD", 350, 385);
+		
+		break;
+		
+		
+		}
+
+		
+		System.out.println(mouseX + " - " + mouseY); // Mouse position on console
+
 	}
 	
 	
