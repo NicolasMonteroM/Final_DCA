@@ -39,8 +39,18 @@ public class Main extends PApplet {
 		plataformas.add(new Platform(127,316,75,this));
 		plataformas.add(new Platform(43,283,42,this));
 		plataformas.add(new Platform(552,299,42,this));
+		plataformas.add(new Platform(652,269,42,this));
+		plataformas.add(new Platform(385,253,42,this));
+		plataformas.add(new Platform(268,212,75,this));
+		plataformas.add(new Platform(127,223,75,this));
+		plataformas.add(new Platform(10,154,42,this));
+		plataformas.add(new Platform(482,212,42,this));
+		plataformas.add(new Platform(582,227,42,this));
+		plataformas.add(new Platform(708,222,42,this));
+		plataformas.add(new Platform(367,136,117,this));
+		plataformas.add(new Platform(582,125,186,this));
 		colorMode(HSB, 360, 360, 360);
-		personaje= new Personaje(this,20,0);
+		personaje= new Personaje(this,43,376);
 
 	}
 

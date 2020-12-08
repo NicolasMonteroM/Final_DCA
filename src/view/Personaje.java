@@ -28,7 +28,9 @@ public class Personaje extends PApplet {
 public void pintar() {
 	
 	//app.image(imagen,posPersonaje.x,posPersonaje.y-8);
-	app.ellipse(posPersonaje.x,posPersonaje.y-8,16,16);
+	app.imageMode(CENTER);
+
+	app.image(imagen,posPersonaje.x,posPersonaje.y-8);
 	if(!choque) {
 		vel.y+=0.07;
 	}
