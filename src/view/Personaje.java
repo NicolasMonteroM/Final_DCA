@@ -2,6 +2,7 @@ package view;
 
 import processing.core.PApplet;
 import processing.core.PFont;
+import processing.core.PImage;
 import processing.core.PVector;
 
 public class Personaje extends PApplet {
@@ -11,7 +12,7 @@ public class Personaje extends PApplet {
 	public boolean choque = false;
 	 float movimiento ;
 	 float distancia ;
-	
+	PImage imagen;
 	
  Personaje(PApplet app, float x, float y){
 	 this.app = app;
@@ -19,11 +20,14 @@ public class Personaje extends PApplet {
 	 vel=new PVector();
 	 movimiento = 0;
 	 distancia = 2;
+	 imagen=app.loadImage("personaje.png");
 	 
 	
 			 
  }
 public void pintar() {
+	
+	//app.image(imagen,posPersonaje.x,posPersonaje.y-8);
 	app.ellipse(posPersonaje.x,posPersonaje.y-8,16,16);
 	if(!choque) {
 		vel.y+=0.07;

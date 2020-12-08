@@ -12,7 +12,7 @@ public class Main extends PApplet {
 	private String screen;
 	private Personaje personaje;
 	private ArrayList<Platform> plataformas;
-	private Platform plataforma1;
+
 	
 
 	public static void main(String[] args) {
@@ -31,8 +31,14 @@ public class Main extends PApplet {
 		register = new Register(this);
 		plataformas=new ArrayList<Platform>();
 		
-		plataformas.add(new Platform(0,100,100,this));
-		plataformas.add(new Platform(100,200,200,this));
+		plataformas.add(new Platform(1,408,282,this));
+		plataformas.add(new Platform(485,408,282,this));
+		plataformas.add(new Platform(241,362,75,this));
+		plataformas.add(new Platform(460,362,75,this));
+		plataformas.add(new Platform(352,330,42,this));
+		plataformas.add(new Platform(127,316,75,this));
+		plataformas.add(new Platform(43,283,42,this));
+		plataformas.add(new Platform(552,299,42,this));
 		colorMode(HSB, 360, 360, 360);
 		personaje= new Personaje(this,20,0);
 
@@ -41,7 +47,7 @@ public class Main extends PApplet {
 	public void draw() {
 		background(0);
 		textFont(font);
-		println(personaje.choque);
+	
 		personaje.choque= false;
 
 		// Screens

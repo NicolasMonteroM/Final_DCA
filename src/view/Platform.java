@@ -37,7 +37,7 @@ Platform(float x, float y, float w, PApplet app){
 	 
  }
  public boolean collide (PVector p) {
-	 if(p.x > pos.x && p.y > pos.y && p.x < pos.x+w && p.y < pos.y+10) {
+	 if(p.x > pos.x && p.y> pos.y && p.x < pos.x+w && p.y < pos.y+10) {
 		return true;
 	 } return false;
  }
