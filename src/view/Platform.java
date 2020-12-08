@@ -36,10 +36,10 @@ Platform(float x, float y, float w, PApplet app){
 	 
 	 
  }
- public void collide (PVector p) {
+ public boolean collide (PVector p) {
 	 if(p.x > pos.x && p.y > pos.y && p.x < pos.x+w && p.y < pos.y+10) {
-		 p.y= pos.y;
-	 }
+		return true;
+	 } return false;
  }
  
 }
