@@ -1,5 +1,7 @@
 package view;
 
+import java.util.ArrayList;
+
 import processing.core.PApplet;
 import processing.core.PFont;
 
@@ -8,6 +10,7 @@ public class Main extends PApplet {
 	PFont font;
 	private Register register;
 	private String screen;
+	private ArrayList<Platform> plataformas;
 
 	public static void main(String[] args) {
 		PApplet.main(Main.class.getName());
@@ -22,6 +25,8 @@ public class Main extends PApplet {
 		screen = "register";
 		font = createFont("Anonymous Pro Bold", 12);
 		register = new Register(this);
+		plataformas=new ArrayList<Platform>();
+		plataformas.add(new Platform(100,100,20,this));
 
 	}
 
@@ -61,6 +66,9 @@ public class Main extends PApplet {
 			background(0);
 			fill(255);
 			text("Nivel 3", width/2, height/2);
+			for(Platform i: plataformas) {
+				i.show();
+			}
 
 			break;
 			

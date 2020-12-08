@@ -60,7 +60,7 @@ public class Register {
 		String screen = "register";
 		
 		if (app.mousePressed && start && canStart) {
-			screen= "level 1";
+			screen= "level 3";
 		}
 		
 		if (app.mousePressed && app.mouseX>333 && app.mouseX<438 && app.mouseY>365 && app.mouseY<395) {

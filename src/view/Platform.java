@@ -12,7 +12,8 @@ public class Platform extends PApplet{
 PVector pos;
 
 private float w;
-Platform(float x, float y, float w){
+Platform(float x, float y, float w, PApplet app){
+	this.app = app;
  this.w=w;
  pos = new PVector (x,y);
 }
@@ -28,9 +29,9 @@ Platform(float x, float y, float w){
 	  
 	   h += 2;
 
-	   strokeWeight(4);
-	   stroke(h, 360, 360);
-	   line(pos.x,pos.y, pos.x+w,pos.y);
+	  this.app.strokeWeight(4);
+	  this.app.stroke(h, 360, 360);
+	  this.app.line(pos.x,pos.y, pos.x+w,pos.y);
 	 
 	 
  }
