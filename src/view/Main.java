@@ -11,6 +11,7 @@ public class Main extends PApplet {
 	private Register register;
 	private String screen;
 	private ArrayList<Platform> plataformas;
+	private Platform plataforma1;
 
 	public static void main(String[] args) {
 		PApplet.main(Main.class.getName());
@@ -19,6 +20,7 @@ public class Main extends PApplet {
 
 	public void settings() {
 		size(768, 458);
+		
 	}
 
 	public void setup() {
@@ -26,7 +28,10 @@ public class Main extends PApplet {
 		font = createFont("Anonymous Pro Bold", 12);
 		register = new Register(this);
 		plataformas=new ArrayList<Platform>();
-		plataformas.add(new Platform(100,100,20,this));
+		
+		plataformas.add(new Platform(100,100,100,this));
+		plataformas.add(new Platform(200,200,200,this));
+		colorMode(HSB, 360, 360, 360);
 
 	}
 
@@ -64,8 +69,7 @@ public class Main extends PApplet {
 			
 		case "level 3":
 			background(0);
-			fill(255);
-			text("Nivel 3", width/2, height/2);
+			
 			for(Platform i: plataformas) {
 				i.show();
 			}

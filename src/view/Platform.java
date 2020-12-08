@@ -8,6 +8,7 @@ import processing.core.PVector;
 
 public class Platform extends PApplet{
 	private PApplet app;
+	public float h = 0;
 
 PVector pos;
 
@@ -21,7 +22,7 @@ Platform(float x, float y, float w, PApplet app){
  public void show () {
 	 
  
-	 float h = 0;
+	 
 	 
 	   if (h > 360){
 	     h = 0;
