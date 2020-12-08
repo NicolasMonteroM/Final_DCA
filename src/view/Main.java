@@ -13,6 +13,7 @@ public class Main extends PApplet {
 	private Personaje personaje;
 	private ArrayList<Platform> plataformas;
 	private ArrayList<Platform> plataformas2;
+	private ArrayList<Platform> plataformas1;
 
 	
 
@@ -32,6 +33,15 @@ public class Main extends PApplet {
 		register = new Register(this);
 		plataformas=new ArrayList<Platform>();
 		plataformas2=new ArrayList<Platform>();
+		plataformas1=new ArrayList<Platform>();
+		
+		// lvl 1
+		
+		plataformas1.add(new Platform(1,408,282,this));
+		plataformas1.add(new Platform(301,353,92,this));
+		plataformas1.add(new Platform(469,273,148,this));
+		plataformas1.add(new Platform(469,352,251,this));
+		
 		
 		//lvl 2
 		
@@ -77,8 +87,6 @@ public class Main extends PApplet {
 		plataformas.add(new Platform(582,125,186,this));
 		
 		
-		
-		
 		colorMode(HSB, 360, 360, 360);
 		personaje= new Personaje(this,43,376);
 
@@ -106,11 +114,16 @@ public class Main extends PApplet {
 			break;
 
 		case "level 1":
-			register.getCp5().hide();
-			background(255);
-			fill(0);
-			text("Nivel 1", width/2, height/2);
-
+			
+			background(0);
+			for(Platform i: plataformas1) {
+				i.show();
+				if(i.collide(personaje.posPersonaje)) {
+					personaje.choque=true;
+					personaje.posPersonaje.y=i.pos.y;
+				}
+			}
+			personaje.pintar();
 			break;
 			
 		case "level 2":
