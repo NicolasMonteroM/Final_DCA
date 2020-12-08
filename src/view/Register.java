@@ -47,7 +47,7 @@ public class Register {
 		if (app.mouseX>350 && app.mouseX<420 && app.mouseY>330 && app.mouseY<360) {
 		start = true;
 		nickname = cp5.get(Textfield.class,"Nickname").getText();
-		System.out.println(nickname);
+		//System.out.println(nickname);
 		
 		if(!nickname.equals("")) {
 		cp5.get(Textfield.class, "Nickname").setText("");
@@ -60,7 +60,7 @@ public class Register {
 		String screen = "register";
 		
 		if (app.mousePressed && start && canStart) {
-			screen= "level 3";
+			screen= "level 2";
 		}
 		
 		if (app.mousePressed && app.mouseX>333 && app.mouseX<438 && app.mouseY>365 && app.mouseY<395) {

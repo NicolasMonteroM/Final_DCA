@@ -32,7 +32,7 @@ public void pintar() {
 
 	app.image(imagen,posPersonaje.x,posPersonaje.y-8);
 	if(!choque) {
-		vel.y+=0.07;
+		vel.y+=0.1;
 	}
 	
 	posPersonaje.add(vel);

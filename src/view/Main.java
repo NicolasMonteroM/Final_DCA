@@ -12,6 +12,7 @@ public class Main extends PApplet {
 	private String screen;
 	private Personaje personaje;
 	private ArrayList<Platform> plataformas;
+	private ArrayList<Platform> plataformas2;
 
 	
 
@@ -30,6 +31,31 @@ public class Main extends PApplet {
 		font = createFont("Anonymous Pro Bold", 12);
 		register = new Register(this);
 		plataformas=new ArrayList<Platform>();
+		plataformas2=new ArrayList<Platform>();
+		
+		//lvl 2
+		
+		plataformas2.add(new Platform(1,408,282,this));
+		plataformas2.add(new Platform(360,407,179,this));
+		plataformas2.add(new Platform(648,407,120,this));
+		plataformas2.add(new Platform(132,354,95,this));
+		plataformas2.add(new Platform(551,354,95,this));
+		plataformas2.add(new Platform(504,320,35,this));
+		plataformas2.add(new Platform(289,312,40,this));
+		plataformas2.add(new Platform(0,312,82,this));
+		plataformas2.add(new Platform(352,269,82,this));
+		plataformas2.add(new Platform(132,269,110,this));
+		plataformas2.add(new Platform(2,227,82,this));
+		plataformas2.add(new Platform(289,193,40,this));
+		plataformas2.add(new Platform(211,193,40,this));
+		plataformas2.add(new Platform(132,193,40,this));
+		plataformas2.add(new Platform(2,152,82,this));
+		plataformas2.add(new Platform(370,152,40,this));
+		plataformas2.add(new Platform(445,110,40,this));
+		plataformas2.add(new Platform(566,152,179,this));
+		
+		
+		//lvl 3
 		
 		plataformas.add(new Platform(1,408,282,this));
 		plataformas.add(new Platform(485,408,282,this));
@@ -49,6 +75,10 @@ public class Main extends PApplet {
 		plataformas.add(new Platform(708,222,42,this));
 		plataformas.add(new Platform(367,136,117,this));
 		plataformas.add(new Platform(582,125,186,this));
+		
+		
+		
+		
 		colorMode(HSB, 360, 360, 360);
 		personaje= new Personaje(this,43,376);
 
@@ -84,9 +114,15 @@ public class Main extends PApplet {
 			break;
 			
 		case "level 2":
-			background(255);
-			fill(0);
-			text("Nivel 2", width/2, height/2);
+			background(0);
+			for(Platform i: plataformas2) {
+				i.show();
+				if(i.collide(personaje.posPersonaje)) {
+					personaje.choque=true;
+					personaje.posPersonaje.y=i.pos.y;
+				}
+			}
+			personaje.pintar();
 
 			break;
 			

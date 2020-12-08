@@ -30,7 +30,7 @@ Platform(float x, float y, float w, PApplet app){
 	  
 	   h += 2;
 
-	  this.app.strokeWeight(4);
+	  this.app.strokeWeight(2);
 	  this.app.stroke(h, 360, 360);
 	  this.app.line(pos.x,pos.y, pos.x+w,pos.y);
 	 
