@@ -7,7 +7,7 @@ import processing.core.PVector;
 public class Personaje extends PApplet {
 	private PApplet app;
 	 PVector posPersonaje;
-	private PVector vel;
+	PVector vel;
 	public boolean choque = false;
 	 float movimiento ;
 	 float distancia ;
@@ -18,7 +18,7 @@ public class Personaje extends PApplet {
 	 posPersonaje=new PVector(x,y);
 	 vel=new PVector();
 	 movimiento = 0;
-	 distancia = 1;
+	 distancia = 2;
 	 
 	
 			 
@@ -26,20 +26,21 @@ public class Personaje extends PApplet {
 public void pintar() {
 	app.ellipse(posPersonaje.x,posPersonaje.y-8,16,16);
 	if(!choque) {
-		vel.y+=0.02;
+		vel.y+=0.07;
 	}
 	
 	posPersonaje.add(vel);
 	posPersonaje.x+=movimiento;
+	vel.mult((float) 1);
 }
 public void mover() {
 	if(key=='a') {
 		movimiento=-distancia;
-		println("se movió");
+		
 	}
 	if(key=='d' ) {
 		movimiento=distancia;
-		println("se movió");
+	
 	}
 	
 }

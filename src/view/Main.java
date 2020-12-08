@@ -41,9 +41,13 @@ public class Main extends PApplet {
 	public void draw() {
 		background(0);
 		textFont(font);
+		println(personaje.choque);
+		personaje.choque= false;
 
 		// Screens
 		//System.out.println(screen);  
+		
+		
 		
 		switch (screen) { 
 
@@ -73,11 +77,11 @@ public class Main extends PApplet {
 		case "level 3":
 			
 			background(0);
-			boolean choque=false;
+			
 			for(Platform i: plataformas) {
 				i.show();
 				if(i.collide(personaje.posPersonaje)) {
-					choque=true;
+					personaje.choque=true;
 					personaje.posPersonaje.y=i.pos.y;
 				}
 			}
@@ -102,12 +106,19 @@ public class Main extends PApplet {
 	public void keyPressed() {
 		if(key=='a') {
 			personaje.movimiento=-personaje.distancia;
-			println("se movió");
+			
 		}
 		if(key=='d' ) {
 			personaje.movimiento=personaje.distancia;
-			println("se movió");
+			
 		}
+		if(key==' ' ) {
+			if(personaje.choque) {
+				personaje.vel.y -= 7;
+				
+			}
+		}
+			
 	}
 	public void keyReleased() {
 		if(key=='a') {
