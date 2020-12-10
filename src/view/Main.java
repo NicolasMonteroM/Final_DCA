@@ -115,12 +115,13 @@ public class Main extends PApplet {
 			fill(240);
 			text("LEADERBOARD", 350, 385);
 			leaderboard.getCp5().hide();
+			register.getCp5().show();
 
 
 			break;
 
 		case "level 1":
-			
+			register.getCp5().hide();
 			background(0);
 			for(Platform i: plataformas1) {
 				i.show();
