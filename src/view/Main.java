@@ -9,6 +9,8 @@ public class Main extends PApplet {
 
 	PFont font;
 	private Register register;
+	private Leaderboard leaderboard;
+
 	private String screen;
 	private Personaje personaje;
 	private ArrayList<Platform> plataformas;
@@ -31,6 +33,8 @@ public class Main extends PApplet {
 		screen = "register";
 		font = createFont("Anonymous Pro Bold", 12);
 		register = new Register(this);
+		leaderboard = new Leaderboard(this);
+
 		plataformas=new ArrayList<Platform>();
 		plataformas2=new ArrayList<Platform>();
 		plataformas1=new ArrayList<Platform>();
@@ -110,6 +114,8 @@ public class Main extends PApplet {
 			screen = register.changeScreen();
 			fill(240);
 			text("LEADERBOARD", 350, 385);
+			leaderboard.getCp5().hide();
+
 
 			break;
 
@@ -156,9 +162,10 @@ public class Main extends PApplet {
 			
 		case "leaderboard":
 			register.getCp5().hide();
-			background(0);
-			fill(255);
-			text("LEADERBOARD", width/2, height/2);
+			leaderboard.drawScreen();
+			leaderboard.getCp5().show();
+			screen = leaderboard.changeScreen();
+
 
 			break;
 
