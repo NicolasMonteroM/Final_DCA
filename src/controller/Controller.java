@@ -13,9 +13,21 @@ private PApplet app;
 
 	}
 	
-	public void drawTimeAndScore() {
+	public void newPlayer(String nickname, PApplet app) {
+		logic.createPlayer(nickname, app);
 		
 	}
+	
+	public void naturalOrder() {
+		logic.naturalOrder();
+	}
+	
+	public void drawLeaders() {
+		logic.drawLeaders();
+	}
+
+	
+
 
 	
 }

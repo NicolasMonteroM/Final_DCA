@@ -35,13 +35,16 @@ public class Player implements Comparable<Player> {
 	public void drawOnLevel(int time, int score) {
 		app.fill(240);
 		app.text("SCORE: " + score, 400, 120);
-		app.text("Nickname" + time, 500, 120);
+		app.text("TIME" + time + "s", 500, 120);
 	}
 	
 	public int getScore() {
 		return score;
 	}
-
+	
+	public int getTime() {
+		return time;
+	}
 	
 	
 }

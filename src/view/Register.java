@@ -52,6 +52,8 @@ public class Register {
 		if(!nickname.equals("")) {
 		cp5.get(Textfield.class, "Nickname").setText("");
 		canStart = true;
+		//controller.newPlayer(nickname, app);
+
 		}
 		}
 	}
@@ -79,6 +81,7 @@ public class Register {
 	}
 
 	public String getNickname() {
+		nickname = cp5.get(Textfield.class,"Nickname").getText();
 		return nickname;
 	}
 

@@ -31,6 +31,8 @@ public class Leaderboard {
 		app.text("Time", 430, 170);
 		app.text("Date", 580, 170);
 		app.text("BACK", 370, 385);
+		
+		//controller.drawLeaders();
 
 					
 	}
